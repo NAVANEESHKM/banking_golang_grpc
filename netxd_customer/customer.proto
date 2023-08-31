@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package netxd_customer;
+
+option go_package="github.com/NAVANEESHKM/netxd_customer";
+
+
+service CustomerService{
+    rpc CreateCustomer (Customer)returns(CustomerResponse);
+    rpc UpdateCustomer(CustomerDetails)returns(CustomerDetailsResponse);
+    
+}
+
+
+
+message Customer{
+    int32 BankID=1;
+	string Customer_Name=2;
+	int32 Customer_ID=3;
+	int32 Balance=4; 
+}
+
+message CustomerResponse{
+    int32 Balance=1;
+}
+
+
+
+message CustomerDetails{
+    int32 From_ID=1;
+    int32 TO_ID=2;
+    int32 Amount=3;
+	
+}
+message CustomerDetailsResponse{
+    int32 From_ID=1;
+}
+
+
